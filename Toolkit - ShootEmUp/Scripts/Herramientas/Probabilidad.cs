@@ -7,6 +7,7 @@ public class Probabilidad{
     private float sumatoria = 0;
 
     public void Clear(){
+        sumatoria = 0;
         probabilidades.Clear();
     }
     public void AddProbabilidad(float probabilidad){

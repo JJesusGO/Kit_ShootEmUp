@@ -99,6 +99,11 @@ namespace SEUP{
             mapa = Mapa.GetInstancia();
             game = ManagerGameplay.GetInstanciaBase();
 
+            if (entidadreferencia == null)
+                distancia = distanciamaxima;
+            else
+                distancia = Mathf.Abs(entidadreferencia.GetPosicion().z - GetPosicion().z);           
+
             for (int i = 0; i < generacion.Count; i++)
                 generacion[i].Start(game.GetDificultad());
 
@@ -118,7 +123,7 @@ namespace SEUP{
                 if (entidadreferencia == null)
                     Generar();
                 else
-                {
+                {                    
                     if (Mathf.Abs(entidadreferencia.GetPosicion().z - GetPosicion().z) >= distancia)
                         Generar();
                 }
@@ -151,7 +156,7 @@ namespace SEUP{
             probabilidades.Clear();
 
             for (int i = 0; i < generacion.Count; i++)
-                if (generacion[i].GetDistanciaMinima() < distancia && 
+                if (generacion[i].GetDistanciaMinima() <= distancia && 
                     generacion[i].IsActivo() &&
                     generacion[i].GetProbabilidad(dificultad) > 0.0f)
                 {                    
@@ -161,10 +166,9 @@ namespace SEUP{
 
             if (probabilidades.GetProbabilidadCount() == 0)
                 return;
-
+            
             int n = probabilidades.NextProbabilidad();
-
-
+          
             Generar(entidades[n],entidadpadre);
             for (int i = 0; i < generacion.Count; i++)
                 if (generacion[i].IsEntidad(entidades[n])){

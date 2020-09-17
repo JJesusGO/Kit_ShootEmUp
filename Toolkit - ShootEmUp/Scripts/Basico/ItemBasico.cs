@@ -4,7 +4,7 @@ using SEUP;
 
 
 public enum ItemTipo{
-   PUNTAJE,ENERGIA,VIDA, ATAQUE
+   PUNTAJE,ENERGIA,VIDA, ATAQUE, REDUCCIONDAÑO
 }
 
 public class ItemBasico : Item{
@@ -42,6 +42,9 @@ public class ItemBasico : Item{
                 break;
             case ItemTipo.ATAQUE:
                 personaje.ModAtaque(valor);
+                break;
+            case ItemTipo.REDUCCIONDAÑO:
+                personaje.ModReduccionDaño(valor);
                 break;
         }
        

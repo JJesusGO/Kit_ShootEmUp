@@ -39,9 +39,14 @@ namespace SEUP{
             if (!IsEnable())
                 return;
 
+
             Rigidbody r = GetEntidad().GetRigidbody();
             if (r == null)
                 return;
+
+            if (!gameplay.IsEstado(GameplayEstado.JUGANDO))
+                r.velocity = Vector3.zero;
+            else {
 
                 Vector3 vbase = Vector3.zero;
                 if (relativo && gameplay != null)
@@ -65,8 +70,9 @@ namespace SEUP{
 
                         break;
                 }
-       
-
+   
+            }
+        
         }
         public override void Update(){
             base.Update();

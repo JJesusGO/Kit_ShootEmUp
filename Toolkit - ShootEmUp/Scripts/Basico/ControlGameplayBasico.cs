@@ -91,17 +91,22 @@ namespace SEUP{
         private void Update(){
             temporizador.Update();
 
-            uipuntaje.SetNumero(puntaje);
+            if (uipuntaje != null)
+                uipuntaje.SetNumero(puntaje);
             if (uipuntajemaximo != null)
-                uipuntajemaximo.SetUINumero(puntajemaximo);
+                uipuntajemaximo.SetNumero(puntajemaximo);
 
-            uividabarra.SetValor(jugador.GetVida(true));
-            uividanumero.SetNumero(jugador.GetVida());
+            if(uividabarra!=null)                
+                uividabarra.SetValor(jugador.GetVida(true));
+            if(uividanumero!=null)   
+                uividanumero.SetNumero(jugador.GetVida());
             if(uividasnumero!=null)
-                uividasnumero.SetUINumero(vidas);
-            
-            uienergiabarra.SetValor(jugador.GetEnergia(true));
-            uienergianumero.SetNumero(jugador.GetEnergia());
+                uividasnumero.SetNumero(vidas);
+
+            if(uienergiabarra!=null)
+                uienergiabarra.SetValor(jugador.GetEnergia(true));
+            if(uienergianumero!=null)
+                uienergianumero.SetNumero(jugador.GetEnergia());
             if(uidificultadbarra!=null)
                 uidificultadbarra.SetValor(GetDificultad());
 
@@ -193,19 +198,23 @@ namespace SEUP{
             SetDificultad(0);
 
             jugador.Revivir();
-
-            uipuntaje.SetUINumero(puntaje);
+            if(uipuntaje!=null)
+                uipuntaje.SetUINumero(puntaje);
             if (uipuntajemaximo != null)
                 uipuntajemaximo.SetUINumero(puntajemaximo);
 
-            uividabarra.SetUIValor(jugador.GetVida(true));
-            uividanumero.SetUINumero(jugador.GetVida());
+            if(uividabarra!=null)
+                uividabarra.SetUIValor(jugador.GetVida(true));
+            if(uividanumero!=null)
+                uividanumero.SetUINumero(jugador.GetVida());
 
             if(uividasnumero!=null)
                 uividasnumero.SetUINumero(vidas);
 
-            uienergiabarra.SetUIValor(jugador.GetEnergia(true));
-            uienergianumero.SetUINumero(jugador.GetEnergia());
+            if(uienergiabarra!=null)
+                uienergiabarra.SetUIValor(jugador.GetEnergia(true));
+            if(uividasnumero!=null)
+                uividasnumero.SetUINumero(jugador.GetEnergia());
 
             if(uidificultadbarra!=null)
                 uidificultadbarra.SetUIValor(GetDificultad());

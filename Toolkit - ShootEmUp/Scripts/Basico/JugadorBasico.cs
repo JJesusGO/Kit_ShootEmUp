@@ -129,6 +129,7 @@ public class JugadorBasico : Aliado{
 
     private void Disparar(){
 
+        if(disparador!=null)
         if (disparador.IsActivo()){
 
             float costo = costodisparo;
@@ -191,6 +192,9 @@ public class JugadorBasico : Aliado{
 
     public void ModAtaque(float ataque){
         this.ataque.ModAtaqueBasico(ataque);
+    }
+    public void ModReduccionDaño(float reducciondaño){
+        vitalidad.ModReduccionDaño(reducciondaño);
     }
 
     public void  SetHabilidad(HabilidadTipo habilidad){      

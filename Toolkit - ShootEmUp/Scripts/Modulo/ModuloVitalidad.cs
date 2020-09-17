@@ -188,6 +188,11 @@ namespace SEUP{
                 vitalidadevento(info,this);
         }
 
+        public void ModReduccionDaño(float reduccion){
+            perfilvitalidad.ModReduccionDaño(reduccion);
+        }
+
+
         public PerfilVitalidad GetPerfilVitalidad(){
             return perfilvitalidad;
         }
