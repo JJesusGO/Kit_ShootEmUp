@@ -4,6 +4,12 @@
 
 # Descargas
 
+- [ToolKit ShootEmUp 1.1f0](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_1f0.unitypackage)
+
+  * Se arreglo una falla con el EnemigoBasico al generar un Proyectil.
+  * Se agrego la opción de cargar una escena como un evento.
+  * Se agrego UIDato para mostrar información data del elemento de Guardado.
+
 - [ToolKit ShootEmUp 1.0f0](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_0f0.unitypackage)
 
 # Retroalimentacion/Reporte de Bugs
