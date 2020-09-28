@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace SEUP{
 
@@ -61,6 +62,7 @@ namespace SEUP{
             eventoinicioaplicacion.Invoke();
         }   
 
+       
         public void PlayAudio(string codigo)
         {
 
@@ -106,6 +108,14 @@ namespace SEUP{
                 instanciabase = GameObject.FindObjectOfType<ManagerAplicacion>();
             return instanciabase;
         }
+
+        public void EventoCargarEscena(int escena){
+            SceneManager.LoadScene(escena);
+        }
+        public void EventoCargarEscena(string escena){
+            SceneManager.LoadScene(escena);
+        }
+
 
     }
 

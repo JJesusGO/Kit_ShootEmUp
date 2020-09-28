@@ -231,23 +231,25 @@ namespace SEUP{
 
             switch (tipo){
                 case GameplayTipo.INFINITO:
-                    if (this.puntaje > puntajemaximo)
+                    if (this.puntaje > puntajemaximo){
                         puntajemaximo = this.puntaje;
                         if (info != null){                            
                             info.SetData(puntajereferencia, puntajemaximo.ToString());
                             info.Guardar();
                         }
+                    }
                     break;
                 case GameplayTipo.PUNTAJE:
                     if (this.puntaje >= puntajemaximo)
                         this.puntaje = puntajemaximo;
                     break;
                 case GameplayTipo.TIEMPO:
-                    if (this.puntaje > puntajemaximo)
+                    if (this.puntaje > puntajemaximo){
                         puntajemaximo = this.puntaje;
-                    if (info != null){                            
-                        info.SetData(puntajereferencia, puntajemaximo.ToString());
-                        info.Guardar();
+                        if (info != null){                            
+                            info.SetData(puntajereferencia, puntajemaximo.ToString());
+                            info.Guardar();
+                        }
                     }
                     break;
             }

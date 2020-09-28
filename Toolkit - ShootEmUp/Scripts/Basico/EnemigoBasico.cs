@@ -24,6 +24,8 @@ public class EnemigoBasico : Enemigo{
     [SerializeField]
     private UnityEvent eventodaño = new UnityEvent();
 
+    private bool disparar = false;
+    private int  dispararframes = 3; 
 
     protected override void Awake(){
         base.Awake();
@@ -37,7 +39,7 @@ public class EnemigoBasico : Enemigo{
     protected override void Update(){
         base.Update();
 
-        if (disparadores != null){
+        if (disparadores != null && dispararframes <= 0){
             for (int i = 0; i < disparadores.Length; i++)
                 if (disparadores[i].IsActivo())
                 {
@@ -45,9 +47,12 @@ public class EnemigoBasico : Enemigo{
                     eventodisparo.Invoke();
                 }
         }
+
+        if (disparar && dispararframes > 0)
+            dispararframes--;
     }
 
-    public    override void Generacion(Mapa mapa,int x,int y){
+    public override void    Generacion(Mapa mapa,int x,int y){
         if (posicionesdisponibles != null){
             if (posicionesdisponibles.Length == 0)
                 SetPosicion((Vector2)mapa.GetCeldaPosicion(x, y));
@@ -58,6 +63,7 @@ public class EnemigoBasico : Enemigo{
         }
         else
             SetPosicion((Vector2)mapa.GetCeldaPosicion(x,y));
+        disparar = true;
     }
     public override void    Muerte(){
         GetModuloAtaque().SetEnable(false);
@@ -75,7 +81,6 @@ public class EnemigoBasico : Enemigo{
             if (perfil.GetVida() <= 0)
                 Muerte();
         }
-
     }
     private void EventoAtaque(AtaqueInformacion info,ModuloAtaque ataque){
         eventoataque.Invoke();        

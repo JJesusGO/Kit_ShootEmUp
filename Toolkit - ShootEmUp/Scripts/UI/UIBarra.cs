@@ -100,7 +100,7 @@ namespace SEUP{
         public Sprite GetSprites(int i){
             return sprites[i];
         }
-        public int GetIconosCount(){
+        public int    GetIconosCount(){
             return sprites.Length;
         }
 
