@@ -22,7 +22,7 @@ public class DisparadorProyectilBasico : MonoBehaviour{
         }
         if (IsActivo()){
 
-            Proyectil p = (Proyectil)disparoprefab.Create(transform.parent, transform.position, entidad);
+            Proyectil p = (Proyectil)disparoprefab.Create(entidad.transform.parent, transform.position, entidad);
             p.Disparar(transform.forward);
             eventodisparo.Invoke();
 
