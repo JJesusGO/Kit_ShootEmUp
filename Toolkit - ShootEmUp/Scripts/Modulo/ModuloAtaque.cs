@@ -92,12 +92,21 @@ namespace SEUP{
 
         private ManagerGameplay game = null;
         private event AtaqueEvento ataqueevento;
+        private float ataqueheredado = 0.0f;
 
         public override void Start(){
             base.Start();
             game = ManagerGameplay.GetInstanciaBase();
             for (int i = 0; i < perfiles.Length; i++)
                 perfiles[i].Start(EventoColision);
+
+            ataqueheredado = 0.0f;
+            if(GetEntidad().GetEntidadPadre() != null){
+                ModuloAtaque ataque = GetEntidad().GetEntidadPadre().GetModuloAtaque();
+                if (ataque != null)
+                    ataqueheredado = ataque.GetAtaqueBasico();              
+            }
+
         }
 
         public void AddAtaqueEvento(AtaqueEvento evento) {
@@ -127,15 +136,9 @@ namespace SEUP{
 
                    
         public float GetAtaqueBasico(PerfilAtaque perfil = null){
-            float a = GetAtaqueBasicoBase();    
-            if(GetEntidad().GetEntidadPadre() != null){
-                ModuloAtaque ataque = GetEntidad().GetEntidadPadre().GetModuloAtaque();
-                if (ataque != null)
-                    a += ataque.GetAtaqueBasico() * ataquebasicoherencia;                
-            }
+            float a = GetAtaqueBasicoBase() + ataqueheredado * GetAtaqueBasicoHerencia();                
             if (perfil != null)
                 a *= perfil.GetAtaqueBasico();
-
             return a;
         }
    
@@ -146,10 +149,10 @@ namespace SEUP{
                 k = game.GetDificultad();
             return ataquebasico*ataquebasicodificultad.Evaluate(k);
         }
-
         public float GetAtaqueBasicoHerencia(){
             return ataquebasicoherencia;
         }
+
 
         public PerfilAtaque GetPerfil(Colision colision){
             for (int i = 0; i < perfiles.Length; i++)
@@ -160,7 +163,7 @@ namespace SEUP{
         public PerfilAtaque GetPerfiles(int i){
             return perfiles[i];
         }
-        public int GetPerfilesCount(){
+        public int          GetPerfilesCount(){
             return perfiles.Length;
         }
 
