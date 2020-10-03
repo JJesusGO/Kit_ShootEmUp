@@ -6,7 +6,7 @@
 
 - [ToolKit ShootEmUp 1.1f1](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_1f1.unitypackage)
 
-  * Se arreglo una falla con el ataque heredado cuando la entidad padre muere.
+  * Se arreglo una falla con el ataque heredado cuando la Entidad padre muere.
 
 - [ToolKit ShootEmUp 1.1f0](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_1f0.unitypackage)
 
