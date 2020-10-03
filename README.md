@@ -4,7 +4,7 @@
 
 # Descargas
 
-- [ToolKit ShootEmUp 1.1f1](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_1f1.unitypackage)
+- [ToolKit ShootEmUp 1.2f0](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_2f0.unitypackage)
 
   * Se arreglo una falla con el ataque heredado cuando la Entidad padre muere.
 
