@@ -8,7 +8,7 @@
 
   * Se agrego las función para reproducir clips desde las entidades (PlayAudio).
   * Se agrego las funciones para terminar la partida desde un evento (EventoGanarPartida y EventoPerderPartida).
-  * Se agrego AudioCarpeta para detenerlos audios que contiene.
+  * Se agrego AudioCarpeta para detener audios existenten como hijos.
 
 - [ToolKit ShootEmUp 1.2f0](https://raw.githubusercontent.com/TheReaperScythe/Kit_ShootEmUp/master/Versiones/ToolKit_ShootEmUp_1_2f0.unitypackage)
 
