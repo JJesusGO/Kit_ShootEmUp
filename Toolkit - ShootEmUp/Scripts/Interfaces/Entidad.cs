@@ -148,6 +148,10 @@ namespace SEUP{
         public void EventoDestruir(){
             Destruir();
         }
+        public void PlayAudio(string codigo){
+            if (ManagerAplicacion.GetInstanciaBase() != null)
+                ManagerAplicacion.GetInstanciaBase().PlayAudio(codigo);
+        }
 
 
     }

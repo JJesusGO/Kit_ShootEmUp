@@ -8,9 +8,9 @@ namespace SEUP{
     [System.Serializable]
     public struct AudioPerfil{
         [SerializeField]
-        public Transform carpeta;
-        [SerializeField]
         public string nombre;
+        [SerializeField]
+        public Transform carpeta;
         [SerializeField]
         public Audio  prefab;
     }

@@ -277,6 +277,15 @@ namespace SEUP{
             ReiniciarNivel();
         }
 
+        public void EventoGanarPartida(){
+            if (IsEstado(GameplayEstado.JUGANDO))
+                SetEstado(GameplayEstado.GANAR);          
+        }
+        public void EventoPerderPartida(){
+            if (IsEstado(GameplayEstado.JUGANDO))
+                SetEstado(GameplayEstado.PERDER);
+        }
+
         public static ControlGameplayBasico GetInstancia(){
             if (instancia == null)
                 instancia = GameObject.FindObjectOfType<ControlGameplayBasico>();

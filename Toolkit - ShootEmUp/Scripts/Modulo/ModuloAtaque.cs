@@ -128,20 +128,17 @@ namespace SEUP{
                 ataqueevento(info,this);
         }
 
-        public void ModAtaqueBasico(float mod){
+        public void  ModAtaqueBasico(float mod){
             ataquebasico += mod;
             if (ataquebasico < 0)
                 ataquebasico = 0;
-        }
-
-                   
+        }                             
         public float GetAtaqueBasico(PerfilAtaque perfil = null){
             float a = GetAtaqueBasicoBase() + ataqueheredado * GetAtaqueBasicoHerencia();                
             if (perfil != null)
                 a *= perfil.GetAtaqueBasico();
             return a;
         }
-   
 
         public float GetAtaqueBasicoBase(){
             float k = 0.0f;
